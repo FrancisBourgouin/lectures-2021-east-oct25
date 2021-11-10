@@ -1,29 +1,44 @@
-const functionGenerator = (someValue) => {
+// const someValue = 5;
+
+// const tempCtoF = (temp) => {
+//   const round = value => Math.round(value * 100) / 100
+
+//   return round(temp)
+// }
+// const tempFtoC = (temp) => {
+//   const round = value => Math.round(value * 10) / 10
+
+//   return round(temp)
+// }
+
+const functionWrapper = (someValue) => {
+	const bob = { a: 1 };
+
 	const someFunction = (times) => {
 		for (let i = 0; i < times; i++) {
 			console.log(someValue);
 		}
 	};
 
-	const someOtherFunction = () => {
-		console.log(someValue);
+	const someOtherFunction = (value) => {
+		console.log(value + someValue);
 	};
 
-	const someOtherOtherFunction = (number) => {
-		console.log(number + someValue);
-	};
-
-	return { someFunction, someOtherFunction, someOtherOtherFunction };
+	return { bob, someFunction, someOtherFunction };
 };
 
-const { someFunction, someOtherFunction, someOtherOtherFunction } =
-	functionGenerator(55);
-// const tempConverter = (temp) => {
-//   const round = (value) => Math.round(value * 10) / 10
-
-//   return round(temp)
-// }
+const { someFunction, someOtherFunction } = functionWrapper(10);
+const bobby = functionWrapper(15);
 
 someFunction(2);
-someOtherFunction();
-someOtherOtherFunction(10);
+someOtherFunction(20);
+
+bobby.bob;
+
+const bob = {
+	method: () => {
+		console.log(this);
+	},
+};
+
+bob.method();

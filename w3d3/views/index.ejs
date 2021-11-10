@@ -7,7 +7,8 @@
 			</div>
 			<% if(email === "pontiac@bandit.com"){ %>
 				<img src="/doug.webp" />
-			<% } else if (email === "gentleman@cambrioleur.com"){ %>
+			<% } %>
+			<% if(email === "gentleman@cambrioleur.com"){ %>
 				<img src="/arsene.gif" />
 			<% } %>
 		</main>
@@ -23,7 +24,7 @@
 			</form>
 		<% } %>
 
-		<% if(email){ %>
+		<% if(email) { %>
 			<form action="/logout" method="POST">
 				<button type="submit">Logout</button>
 			</form>

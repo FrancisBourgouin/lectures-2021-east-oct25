@@ -1,41 +1,38 @@
-const generateUserHelpers = (userDB) => {
-	const getUserObject = (userId) => {
-		const currentUser = userDB[userId];
+const userHelperGenerator = (userDB) => {
+	const getUserInformation = (email) => {
+		const currentUser = userDB[email];
 
-		if (currentUser) {
-			return currentUser;
+		if (!currentUser) {
+			return {};
 		}
 
-		return {};
+		return currentUser;
 	};
 
-	const authenticateUserObj = (email, password) => {
-		const userObj = userDB[email];
+	const fancyGetUserInformation = (email) => userDB[email] || {};
 
-		if (!userObj) {
-			return { data: null, err: "Bad email" };
+	const authenticateUser = (email, password) => {
+		const currentUser = userDB[email];
+		// Check if email and username are good
+
+		if (!currentUser) {
+			// If email doesn't exist, eject
+			return { error: "Bad email", data: null };
 		}
 
-		if (userObj.password !== password) {
-			return { data: null, err: "Bad password" };
+		if (currentUser.password !== password) {
+			// If password doesn't match, eject
+			return { error: "Bad password", data: null };
 		}
-
-		return { data: userObj, err: null };
+		// Send back the user info in the shape of a JSON response
+		return { data: currentUser, error: null };
 	};
 
-	const authenticateUserArr = (list, email, password) => {
-		for (const user of list) {
-			if (user.email === email) {
-				if (user.password === password) {
-					return { data: user, err: null };
-				}
-				return { data: null, err: "Bad password" };
-			}
-		}
-		return { data: null, err: "Bad email" };
+	return {
+		getUserInformation,
+		fancyGetUserInformation,
+		authenticateUser,
 	};
-
-	return { authenticateUserArr, authenticateUserObj, getUserObject };
 };
 
-module.exports = generateUserHelpers;
+module.exports = userHelperGenerator;
