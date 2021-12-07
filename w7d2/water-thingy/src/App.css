@@ -1,0 +1,12 @@
+.SuperFancyfication div {
+  padding: 1em;
+}
+.SuperFancyfication {
+  background: yellow;
+}
+.SuperFancyfication > div {
+  background: green;
+}
+.SuperFancyfication > div > div {
+  background: blueviolet;
+}

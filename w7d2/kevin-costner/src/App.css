@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+header {
+  background: #bada55;
+  padding: 0.5em;
+}
+header h1 {
+  font-weight: 900;
+  font-size: 3em;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+article {
+  width: 30vw;
+  height: 30vh;
+  border: 0.5em solid black;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
