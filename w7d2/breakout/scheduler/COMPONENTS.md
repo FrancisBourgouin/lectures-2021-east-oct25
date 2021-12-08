@@ -18,8 +18,8 @@
 
 ### Button
 
-- State:
-- Props:
+- State: - 
+- Props: 
 - Used by:
 
 ### DayList

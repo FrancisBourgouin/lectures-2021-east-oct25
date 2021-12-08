@@ -4,6 +4,12 @@
 
 Show a list of tiles representing plants, with their name, and the last time they were watered.
 
+# User Stories
+
+- Should show a list of plants
+- Should show a green border when plant is well watered
+- Should show a red border when plant is not well watered
+
 # Data Structure
 
 ## Plant (singular)

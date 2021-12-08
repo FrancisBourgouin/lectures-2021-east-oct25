@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+header {
+  background-color: #67e35f;
+}
+header h1 {
+  font-size: 2em;
+  font-weight: 900;
+}
