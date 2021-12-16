@@ -1,0 +1,30 @@
+:root {
+  --main-color: $main-color:
+}
+
+
+
+.App {
+  text-align: center;
+  color: var(--main-color);
+}
+
+input {
+  border: 5px solid var(--main-color);
+}
+
+
+.App h1{
+
+}
+
+.App h1 span {
+
+}
+.App h1 span {
+
+}
+
+.App h2 {
+
+}
